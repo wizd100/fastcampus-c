@@ -8,21 +8,19 @@
 
 #include <stdio.h>
 
-void myFunction() {
-    printf("myFunction\n");
+int add(int a, int b) {
+    return a + b;
 }
 
-void yourFunction() {
-    printf("yourFunction\n");
+int sub(int a, int b) {
+    return a - b;
 }
-
 
 int main(void) {
-    void(*fp)() = myFunction;
-    fp();
-    fp = yourFunction;
-    fp();
-    
+    int(*fp)(int, int) = add;
+    printf("%d\n", fp(10, 3));
+    fp = sub;
+    printf("%d\n", fp(10, 3));
     
     return 0;
 }
