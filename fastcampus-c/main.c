@@ -8,19 +8,12 @@
 
 #include <stdio.h>
 
-//정적변수는 0으로 자동으로 값을 대입
-int c;
-
 int main(void) {
-    //변수의 초기화
-    int a = 7;
-    printf("The Number is %d \n", a);
+    int i, j;
     
-    //변수가 초기화가 안된 것 쓰레기값이 들어감
-    int b;
-    printf("The Number is %d \n", b);
+    for (i = 0; i < 3; i++) {
+        printf(i);
+    }
     
-    //정적변수
-    printf("The Number is %d \n", c);
     return 0;
 }
