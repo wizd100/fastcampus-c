@@ -8,15 +8,15 @@
 
 #include <stdio.h>
 
-struct Student {
+typedef struct Student {
     char studentId[10];
     char name[10];
     int gradle;
     char major[100];
-};
+} Student;
 
 int main(void) {
-    struct Student s = {"20211008", "bkh", 4, "CS"};
+    Student s = {"20211008", "bkh", 4, "CS"};
     //strcpy(s.studentId, "20211008");
     //strcpy(s.name, "bkh");
     //s.gradle = 4;
