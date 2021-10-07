@@ -16,16 +16,16 @@ typedef struct Student {
 } Student;
 
 int main(void) {
-    Student s = {"20211008", "bkh", 4, "CS"};
-    //strcpy(s.studentId, "20211008");
-    //strcpy(s.name, "bkh");
-    //s.gradle = 4;
-    //strcpy(s.major, "computer science");
+    Student *s = malloc(sizeof(Student));
+    strcpy(s->studentId, "20211008");
+    strcpy(s->name, "bkh");
+    s->gradle = 4;
+    strcpy(s->major, "computer science");
     
-    printf("%s\n", s.studentId);
-    printf("%s\n", s.name);
-    printf("%d\n", s.gradle);
-    printf("%s\n", s.major);
+    printf("%s\n", s->studentId);
+    printf("%s\n", s->name);
+    printf("%d\n", s->gradle);
+    printf("%s\n", s->major);
     
     return 0;
 }
