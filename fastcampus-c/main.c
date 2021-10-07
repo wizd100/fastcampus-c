@@ -8,17 +8,24 @@
 
 #include <stdio.h>
 
-int add(int a, int b) {
-    return a + b;
-}
-
-int (*process(char* a))(int, int) {
-    printf("%s\n", a);
-    return add;
-}
+struct Student {
+    char studentId[10];
+    char name[10];
+    int gradle;
+    char major[100];
+};
 
 int main(void) {
-    printf("%d\n", process("10과 20을 더함 ")(10, 20));
+    struct Student s;
+    strcpy(s.studentId, "20211008");
+    strcpy(s.name, "bkh");
+    s.gradle = 4;
+    strcpy(s.major, "computer science");
+    
+    printf("%s\n", s.studentId);
+    printf("%s\n", s.name);
+    printf("%d\n", s.gradle);
+    printf("%s\n", s.major);
     
     return 0;
 }
