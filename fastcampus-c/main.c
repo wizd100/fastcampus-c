@@ -12,15 +12,13 @@ int add(int a, int b) {
     return a + b;
 }
 
-int sub(int a, int b) {
-    return a - b;
+int (*process(char* a))(int, int) {
+    printf("%s\n", a);
+    return add;
 }
 
 int main(void) {
-    int(*fp)(int, int) = add;
-    printf("%d\n", fp(10, 3));
-    fp = sub;
-    printf("%d\n", fp(10, 3));
+    printf("%d\n", process("10과 20을 더함 ")(10, 20));
     
     return 0;
 }
