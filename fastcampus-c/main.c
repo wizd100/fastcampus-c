@@ -16,11 +16,11 @@ struct Student {
 };
 
 int main(void) {
-    struct Student s;
-    strcpy(s.studentId, "20211008");
-    strcpy(s.name, "bkh");
-    s.gradle = 4;
-    strcpy(s.major, "computer science");
+    struct Student s = {"20211008", "bkh", 4, "CS"};
+    //strcpy(s.studentId, "20211008");
+    //strcpy(s.name, "bkh");
+    //s.gradle = 4;
+    //strcpy(s.major, "computer science");
     
     printf("%s\n", s.studentId);
     printf("%s\n", s.name);
