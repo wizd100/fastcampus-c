@@ -8,12 +8,21 @@
 
 #include <stdio.h>
 
-void function() {
-    printf("func");
+void myFunction() {
+    printf("myFunction\n");
 }
 
+void yourFunction() {
+    printf("yourFunction\n");
+}
+
+
 int main(void) {
-    printf("%d\n", function);
+    void(*fp)() = myFunction;
+    fp();
+    fp = yourFunction;
+    fp();
+    
     
     return 0;
 }
