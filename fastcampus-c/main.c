@@ -10,8 +10,10 @@
 
 int main(void) {
     int a[5] = {1,2,3,4,5};
-    int *b = a; //&a[0]과 동일하다 첫번재 원소의 주소값
-    printf("%d\n", b[2]);
+    int i;
+    for (i = 0; i < 5; i++) {
+        printf("%d ", *(a + i));
+    }
     
     return 0;
 }
