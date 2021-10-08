@@ -7,42 +7,55 @@
 //
 
 #include <stdio.h>
-#define INF 10000
+#include <stdlib.h>
 
-int arr[INF];
-int count = 0;
+typedef struct {
+    int data;
+    struct Node *next;
+} Node;
 
-void addBack(int data) {
-    arr[count] = data;
-    count++;
+Node *head;
+
+void addFront(Node *root, int data) {
+    Node *node = (Node*)malloc(sizeof(Node));
+    node->data = data;
+    node->next = root->next;
+    root->next = node;
 }
 
-void addFirst(int data) {
-    for (int i = count; i >= 1; i--) {
-        arr[i] = arr[i - 1];
-    }
-    arr[0] = data;
-    count++;
+void removeFront(Node *root) {
+    Node *front = root->next;
+    root->next = front->next;
+    free(front);
 }
 
-void show() {
-    for (int i = 0; i < count; i++) {
-        printf("%d ", arr[i]);
+void freeAll(Node *root) {
+    Node *cur = head->next;
+    while (cur != NULL) {
+        Node *next = cur->next;
+        free(cur);
+        cur = next;
     }
 }
 
-void removeAt(int index) {
-    for (int i = index; i < count; i++) {
-        arr[i] = arr[i + 1];
+void showAll(Node *root) {
+    Node *cur = head->next;
+    while (cur != NULL) {
+        printf("%d ", cur->data);
+        cur = cur->next;;
     }
-    count--;
 }
 
 int main(void) {
-    addBack(5);
-    addBack(7);
-    addFirst(1);
-    removeAt(1);
-    show();
+    head = (Node*)malloc(sizeof(Node));
+    head->next = NULL;
+    addFront(head, 2);
+    addFront(head, 3);
+    addFront(head, 4);
+    addFront(head, 5);
+    removeFront(head);
+    showAll(head);
+    freeAll(head);
+    
     return 0;
 }
