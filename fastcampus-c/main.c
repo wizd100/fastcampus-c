@@ -7,25 +7,25 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-typedef struct Student {
-    char studentId[10];
-    char name[10];
-    int gradle;
-    char major[100];
+typedef struct {
+    char name[20];
+    int score;
 } Student;
 
 int main(void) {
-    Student *s = malloc(sizeof(Student));
-    strcpy(s->studentId, "20211008");
-    strcpy(s->name, "bkh");
-    s->gradle = 4;
-    strcpy(s->major, "computer science");
-    
-    printf("%s\n", s->studentId);
-    printf("%s\n", s->name);
-    printf("%d\n", s->gradle);
-    printf("%s\n", s->major);
+    int n;
+    int sum = 0;
+    FILE *fp;
+    fp = fopen("input.txt", "r");
+    fscanf(fp, "%d", &n);
+    Student *students = (Student*)malloc(sizeof(Student) * n);
+    for (int i = 0; i < n; i++) {
+        fscanf(fp, "%s %d", &((students + i)->name), &((students + i)->score));
+        printf("이름 : %s, 성적 : %d\n", ((students + i)->name), ((students + i)->score));
+    }
     
     return 0;
 }
