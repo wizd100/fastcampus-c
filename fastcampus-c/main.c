@@ -8,13 +8,10 @@
 
 #include <stdio.h>
 #include "temp.h"
-#define ll long long
-#define ld long double
+#include "temp.h"
 
 int main(void) {
-    ll a = 9876543210000;
-    ld b = 100.5054;
-    printf("%.1f\n", a * b);
+    
     
     return 0;
 }
