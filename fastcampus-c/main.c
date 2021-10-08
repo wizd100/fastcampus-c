@@ -7,61 +7,38 @@
 //
 
 #include <stdio.h>
-#include <stdlib.h>
+#define SIZE 10000
+#define INF 999999
 
-typedef struct {
-    int data;
-    struct Node *prev;
-    struct Node *next;
-} Node;
+int stack[SIZE];
+int top = -1;
 
-Node *head;
-Node *tail;
-
-void insert(int data) {
-    Node *node = (Node*)malloc(sizeof(Node));
-    node->data = data;
-    Node *cur;
-    cur = head->next;
-    while (cur->data < data && cur != tail) {
-        cur = cur->next;
+void push(int data) {
+    if (top == SIZE - 1) {
+        printf("stack overflow");
+        return;
     }
-    Node *prev = cur->prev;
-    prev->next = node;
-    node->prev = prev;
-    cur->prev = node;
-    node->next = cur;
+    stack[++top] = data;
 }
 
-void removeFront() {
-    Node *node = head->next;
-    head->next = node->next;
-    Node *next = node->next;
-    next->prev = head;
-    free(node);
+int pop() {
+    if (top == -1) {
+        printf("stack underflow");
+    }
+    return stack[top--];
 }
 
 void show() {
-    Node *cur = head->next;
-    while (cur != tail) {
-        printf("%d ", cur->data);
-        cur = cur->next;
+    for (int i = top; i >= 0; i--) {
+        printf("%d\n", stack[i]);
     }
 }
 
 int main(void) {
-    head = (Node*)malloc(sizeof(Node));
-    tail = (Node*)malloc(sizeof(Node));
-    head->next = tail;
-    head->prev = head;
-    tail->next = tail;
-    tail->prev = head;
-    insert(2);
-    insert(1);
-    insert(3);
-    insert(9);
-    insert(7);
-    removeFront();
+    push(7);
+    push(5);
+    push(4);
+    pop();
     show();
     return 0;
 }
