@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C150054270FC70400624FD0 /* temp.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C150053270FC70400624FD0 /* temp.c */; };
 		5C157A7C23C450CE005D96D2 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C157A7B23C450CE005D96D2 /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		5C150052270FC39E00624FD0 /* temp.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = temp.h; sourceTree = "<group>"; };
+		5C150053270FC70400624FD0 /* temp.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = temp.c; sourceTree = "<group>"; };
 		5C157A7823C450CE005D96D2 /* fastcampus-c */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "fastcampus-c"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C157A7B23C450CE005D96D2 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -60,6 +62,7 @@
 			children = (
 				5C157A7B23C450CE005D96D2 /* main.c */,
 				5C150052270FC39E00624FD0 /* temp.h */,
+				5C150053270FC70400624FD0 /* temp.c */,
 			);
 			path = "fastcampus-c";
 			sourceTree = "<group>";
@@ -122,6 +125,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C157A7C23C450CE005D96D2 /* main.c in Sources */,
+				5C150054270FC70400624FD0 /* temp.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
