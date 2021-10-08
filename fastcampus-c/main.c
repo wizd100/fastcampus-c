@@ -8,11 +8,11 @@
 
 #include <stdio.h>
 #include "temp.h"
-#define PI 3.14159
+#define POW(x) (x * x)
 
 int main(void) {
-    int r = 10;
-    printf("원의 둘레 : %.2f\n", 2 * PI * r);
+    int x = 10;
+    printf("제곱 : %d\n", POW(x));
     
     return 0;
 }
