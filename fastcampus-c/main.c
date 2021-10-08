@@ -8,11 +8,13 @@
 
 #include <stdio.h>
 #include "temp.h"
-#define POW(x) (x * x)
+#define ll long long
+#define ld long double
 
 int main(void) {
-    int x = 10;
-    printf("제곱 : %d\n", POW(x));
+    ll a = 9876543210000;
+    ld b = 100.5054;
+    printf("%.1f\n", a * b);
     
     return 0;
 }
