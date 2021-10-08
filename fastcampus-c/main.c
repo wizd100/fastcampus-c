@@ -8,9 +8,11 @@
 
 #include <stdio.h>
 #include "temp.h"
+#define PI 3.14159
 
 int main(void) {
-    printf("%d\n", add(1, 3));
+    int r = 10;
+    printf("원의 둘레 : %.2f\n", 2 * PI * r);
     
     return 0;
 }
